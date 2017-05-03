@@ -18,12 +18,14 @@
  */
 package org.apache.deltaspike.example.scope;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
  */
-public class ScopedBean
+public class ScopedBean implements Serializable
 {
     private Date creationDate;
 
@@ -35,5 +37,14 @@ public class ScopedBean
     public void init()
     {
         creationDate = new Date();
+        state = new AtomicInteger();
+
     }
+
+    public AtomicInteger getState() {
+        return  state;
+    }
+
+    private AtomicInteger state;
+
 }

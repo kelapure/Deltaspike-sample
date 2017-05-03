@@ -35,6 +35,8 @@ public class SessionScopedBean extends ScopedBean implements Serializable
     public void init()
     {
         super.init();
+
+        getState().addAndGet(55);
     }
 
 }

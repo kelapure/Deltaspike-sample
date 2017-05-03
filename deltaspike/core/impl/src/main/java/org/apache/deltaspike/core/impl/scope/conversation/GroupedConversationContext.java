@@ -88,6 +88,7 @@ public class GroupedConversationContext extends AbstractContext implements Group
     @Override
     public boolean isActive()
     {
+
         return this.windowContext.isActive(); //autom. active once a window is active
     }
 

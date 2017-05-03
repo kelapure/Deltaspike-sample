@@ -23,7 +23,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:ds="http://deltaspike.apache.org/jsf">
 
 <h:head>
 	<title>Simple JSF Facelets page</title>
@@ -32,6 +32,7 @@
 <h:body>
 	<h1>JSF 2/CDI Scope testing</h1>
 	<h2>Page 2</h2>
+	<ds:windowId/>
 	<h:panelGrid columns="2" id="scopedValues">
 		<h:outputLabel value="ApplicationScope : " />
 		<h:outputText value="#{applicationScopedBean.creationDate}">
@@ -62,6 +63,12 @@
 		<h:outputText value="#{requestScopedBean.creationDate}">
 			<f:convertDateTime dateStyle="full" type="both" />
 		</h:outputText>
+
+		<h:outputLabel value="GroupedConversationScope : " />
+		<h:outputText value="#{groupedScopedConversationBean.creationDate}">
+			<f:convertDateTime dateStyle="full" type="both" />
+		</h:outputText>
+
 
 	</h:panelGrid>
 	<h:form>
